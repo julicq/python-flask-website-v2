@@ -1,0 +1,16 @@
+<div class="row" style="margin-bottom:16px;padding-bottom:8px;">
+  <div class="col-md-8">
+    <h4
+      style="color:rgb(120,120,120); margin-bottom:4px;">
+      {{job['title']}}
+    </h4>
+    {% if 'color' in job %}
+    <div>
+      <b>Color:</b> {{job['color']}}
+    </div>
+    {% endif %}
+  </div>
+  <div class="col-md-4">
+    <button type="button" class='btn btn-outline-primary float-right align-middle'>GO</button>
+  </div>
+</div>
