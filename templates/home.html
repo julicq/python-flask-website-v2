@@ -11,26 +11,31 @@
         height: 300px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://python-flask-website.julicq.repl.co/static/biesse_materials.png">
     <div class="container">
       <h1 class="text-center mt-4 mb-4">The new Biesse identity.</h1>
-      <img class="img-fluid" id="banner" src="https://python-flask-website.julicq.repl.co/static/biesse_materials.png">
-          <h2 class="text-center mt-4 mb-4">
-            {{company_name}} Dashboard
-          </h2>
-      <p class="lead mt-4 mb-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       <p class="lead mt-4 mb-4">
-         <div>
-          {% for job in jobs %}
-            {% include 'branditem.html'%}  
-          {% endfor %}
-      </p>
-      <p class="text-center mt-2">Copyright 2023, Biesse</p>
-      </div>
+    
+        <h2 class="text-center mt-4 mb-4">
+          {{company_name}} Dashboard
+        </h2>
+          <p class="lead mt-4 mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p class="lead mt-4 mb-4">
+           <div>
+            {% for job in jobs %}
+              {% include 'branditem.html'%}  
+            {% endfor %}
+        
+          </div>
+          {% include 'footer.html' %}
     </div>
+    
   </body>
 </html>
