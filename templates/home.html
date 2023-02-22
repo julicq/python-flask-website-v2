@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Biesse Machines</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <style>
-      #banner {
-        height: 300px;
-        width: 100%;
-        object-fit: cover;
-        margin-bottom: 16px;
-      }
-    </style>
+    {% include 'bootstrap.html' %}
+    {% include 'banner.html' %}
   </head>
   <body>
     {% include 'nav.html' %}
     <h1 class="text-center mt-4 mb-4">The new Biesse identity.</h1>
-    <img class="img-fluid" id="banner" src="/static/biesse_materials.png">
     <div class="container">
         <h2 class="text-center mt-4 mb-4">
           {{company_name}} Machines
@@ -27,28 +15,26 @@
             <!-- Stack the columns on mobile by making one full-width and the other half-width -->
             <div class="row">
               <div class="col-md-8">
-                <p class="lead mt-4 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p class="lead">
+                Biesse is the Biesse Group brand that designs, manufactures and distributes machines and systems for processing wood. Since 1969, it has designed, manufactured and marketed a comprehensive range of technologies and solutions for joiners and large furniture, windows, doors and wood building components manufacturers.
                 </p>
               </div>
               <div class="col-6 col-md-4">
-                <img class="img-fluid" style="height:200px" src="/static/rover.png">
+                <img class="img-fluid" style="height:300px" src="/static/rover.png">
               </div>
             </div>
           <div class="row">
-            
-            
-            
-          </div>
             <p class="lead mt-4 mb-4">
              <div>
-              {% for job in jobs %}
+              {% for machine in machines %}
                 {% include 'branditem.html'%}  
               {% endfor %}
           
             </div>
             </p>
           {% include 'footer.html' %}
+          </div>
+        </div>
     </div>
   </body>
 </html>

@@ -1,34 +1,38 @@
 from flask import Flask, render_template, jsonify
+from database import load_data_from_db, load_machine_from_db
 
 app = Flask(__name__)
 
-BRANDS = [{
-  'id': 1,
-  'title': 'Biesse Wood',
-  'machines': 'Rover, Selco, Opera, Skipper, Akron'
-}, {
-  'id': 2,
-  'title': 'Biesse Glass',
-  'machines': 'Master, Vertmax, Busetti, Genius'
-}, {
-  'id': 3,
-  'title': 'Biesse Stone',
-  'machines': 'Smart, Master, Movetro, Luna'
-}, {
-  'id': 4,
-  'title': 'Biesse Materia',
-  'machines': 'Rover Plast, Terma, Materia'
-}]
-
-
 @app.route("/")
 def hello_world():
-  return render_template('home.html', jobs=BRANDS, company_name="Biesse")
+  machines = load_data_from_db()
+  return render_template('home.html', machines=machines)
 
 
-@app.route("/api/brands")
-def list_brands():
-  return jsonify(BRANDS)
+@app.route("/api/machines")
+def list_machines():
+  machines = load_data_from_db()
+  return jsonify(machines)
+
+
+@app.route("/api/machine/<id>")
+def show_machine_json(id):
+  machine = load_machine_from_db(id)
+  return jsonify(machine)
+
+
+@app.route("/machine/<id>")
+def show_job(id):
+  machine = load_data_from_db(id)
+
+  if not machine:
+    return "Not Found", 404
+
+  return render_template('machinepage.html', machine=machine)
+
+  if not machine:
+    return "Not Found", 404
+  return render_template('jobpage.html', machine=machine)
 
 
 if __name__ == "__main__":
