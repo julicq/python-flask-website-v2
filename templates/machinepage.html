@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{machine.machine_name}} - Biesse Machines</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        Biesse Machines
+      </h1>
+        <h3 class="mb-2">{{machine.machine_name}}</h3>
+        <h4>Material</h4>  
+        <p>{{machine.material}}</p>
+        <h5>Price</h5>
+        <p class="lead mt-0">{{machine.price}}</p>
+        <h4>Currency</h4>
+        <p>{{machine.currency}}</p>
+        <h4>Description</h4>
+        <p>{{machine.description}}</p>
+    </div>
+    {% include 'footer.html' %}
+    
+  </body>
+</html>
