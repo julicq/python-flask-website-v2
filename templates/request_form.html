@@ -1,1 +1,26 @@
-<div>TODO - request form goes here</div>
+<h4>Request Form</h4>
+<form action="/machine/{{machine['id']}}/request" method="post">
+  <div class="mb-2">
+  <label>Name</label><br>
+  <input type="text" name="full_name" placeholder="John Appleseed">
+  </div>
+  
+  <div class="mb-2">
+  <label>Email</label><br>
+  <input type="text" name="email" placeholder="john.appleseed@apple.com">
+  </div>
+
+  <div class="mb-2">
+  <label>Company</label><br>
+  <input type="text" name="company" placeholder="Company">
+  </div>
+
+
+  <div class="mb-2">
+  <label>Project description</label><br>
+  <textarea name="proj_description"></textarea>
+  </div>
+  <input type="submit">
+
+  
+</form>
