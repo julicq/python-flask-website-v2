@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Biesse Machines</title>
     {% include 'bootstrap.html' %}
-    {% include 'banner.html' %}
+    
   </head>
   <body>
     {% include 'nav.html' %}
-    <h1 class="text-center mt-4 mb-4">The new Biesse identity.</h1>
+    {% include 'banner.html' %}
+    
     <div class="container">
-        <h2 class="text-center mt-4 mb-4">
-          {{company_name}} Machines
-        </h2>
-          <div class="container text-center">
+      <h2 class="text-center mt-2 mb-4">The new Biesse identity.</h2>
+                  <div class="container text-center">
             <!-- Stack the columns on mobile by making one full-width and the other half-width -->
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <p class="lead">
                 Biesse is the Biesse Group brand that designs, manufactures and distributes machines and systems for processing wood. Since 1969, it has designed, manufactured and marketed a comprehensive range of technologies and solutions for joiners and large furniture, windows, doors and wood building components manufacturers.
                 </p>
               </div>
-              <div class="col-6 col-md-4">
+              <div class="d-none d-md-block col-md-6">
                 <img class="img-fluid" style="height:300px" src="/static/rover.png">
               </div>
             </div>
           <div class="row">
+            <h2 class="text-center mt-2 mb-4">
+          Biesse Machines
+        </h2>
             <p class="lead mt-4 mb-4">
              <div>
               {% for machine in machines %}
